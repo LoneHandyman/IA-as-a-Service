@@ -7,28 +7,31 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <h1>EntityFinder</h1>
+  <h1>ENTITY-FINDER</h1>
+  <div id="main-zone">
+    <section id="upload-video-zone" class="chunk-zone">
+      <h2>Upload a video</h2>
+      <div id="video-container">
+        <input id="video-input" type="file" accept="video/*">
+        <label for="video-input" id="custom-file-button">Choose Video</label>
+      </div>
+      <video id="video-preview" width="400" controls="controls" preload="metadata">
+      </video>
+    </section>
 
-  <section id="upload-video-zone">
-    <h2>Upload a video</h2>
-    <div id="video-container">
-      <input id="video-input" type="file" accept="video/*">
-    </div>
-    <video id="video-preview" width="400" controls="controls" preload="metadata">
-    </video>
-  </section>
-
-  <section id="search-bar-zone">
-    <form action="#">
-      <input id="search-input" type="text" placeholder="Type keywords of the entities you want to find...">
-      <button id="search-button" type="submit">Search</button>
-    </form>
-  </section>
-
-  <section id="response-zone">
-    <h2>Results</h2>
-    <ul id="frame-list"></ul>
-  </section>
+    <section id="response-zone" class="chunk-zone">
+      <h2>Results</h2>
+      <form action="#">
+        <input id="search-input" type="text" placeholder="Type keywords of the entities you want to find...">
+        <button id="search-button" type="submit">Search</button>
+      </form>
+      <div id="frame-list">
+        <ul id="image-selector">
+          
+        </ul>
+      </div>
+    </section>
+  </div> 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="../js/upload_handler.js"></script>

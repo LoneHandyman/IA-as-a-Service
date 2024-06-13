@@ -28,8 +28,8 @@ var s3 = new AWS.S3({
 
 function drawBoxes(image, metadata) {
   const canvas = document.createElement('canvas');
-  canvas.width = 400;
-  canvas.height = 400;
+  canvas.width = image.width;
+  canvas.height = image.height;
 
   const ctx = canvas.getContext('2d');
   ctx.drawImage(image, 0, 0);
@@ -57,7 +57,7 @@ async function getObjectsFromBucket() {
 
   await $.getJSON(metadataURL, function(metadata) {objMetadata = metadata;});
 
-  const frameScrollableList = document.getElementById('frame-list');
+  const frameScrollableList = document.getElementById('image-selector');
   frameScrollableList.innerHTML = '';
 
   objMetadata.forEach(async element => {
@@ -65,11 +65,17 @@ async function getObjectsFromBucket() {
     img.src = resultsBucketName + element.frame;
 
     img.onload = function() {
-      console.log(img.width, img.height);
+      //console.log(img.width, img.height);
       const imgM = drawBoxes(img, element.objects);
-      console.log(imgM, img);
+      //console.log(imgM, img);
+      const lItem = document.createElement('li');
+      lItem.appendChild(imgM);
 
-      frameScrollableList.appendChild(imgM);
+      lItem.onclick = function(){
+        console.log('hello');
+      }
+
+      frameScrollableList.appendChild(lItem);
     };
   });
 
@@ -83,9 +89,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     event.preventDefault();
 
     try {
-      const frameScrollableList = document.getElementById('frame-list');
-      frameScrollableList.innerHTML = '';
-
       const data = await getObjectsFromBucket();
 
       console.log(data.objMetadata);
