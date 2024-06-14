@@ -51,6 +51,27 @@ function drawBoxes(image, metadata) {
   return modImage;
 }
 
+function showLargeImage(src) {
+  let modal = document.getElementById('image-modal');
+  if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'image-modal';
+      document.body.appendChild(modal);
+  }
+
+  const img = document.createElement('img');
+  img.src = src;
+
+  modal.innerHTML = '';
+  modal.appendChild(img);
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === this) {
+        document.body.removeChild(modal);
+    }
+});
+}
+
 async function getObjectsFromBucket() {
   const metadataURL = encodeURIComponent(resultsBucketName + metadataFileName);
   var objMetadata;
@@ -65,14 +86,12 @@ async function getObjectsFromBucket() {
     img.src = resultsBucketName + element.frame;
 
     img.onload = function() {
-      //console.log(img.width, img.height);
       const imgM = drawBoxes(img, element.objects);
-      //console.log(imgM, img);
       const lItem = document.createElement('li');
       lItem.appendChild(imgM);
 
       lItem.onclick = function(){
-        console.log('hello');
+        showLargeImage(imgM.src);
       }
 
       frameScrollableList.appendChild(lItem);
@@ -83,7 +102,7 @@ async function getObjectsFromBucket() {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
-  const searchButton = document.getElementById('search-button');
+  const searchButton = document.getElementById('lambda-button');
 
   searchButton.addEventListener('click', async function(event) {
     event.preventDefault();

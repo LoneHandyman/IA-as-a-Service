@@ -4,31 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cloud Computing IAaaS</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/body.css">
+  <link rel="stylesheet" href="../css/upload-video-zone.css">
+  <link rel="stylesheet" href="../css/response-zone.css">
 </head>
 <body>
-  <h1>ENTITY-FINDER</h1>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    
+  </div>
+
+  <div id="confirm-zone">
+    <h1>YOLO ENTITY-FINDER</h1>
+    <h3>Powered by AWS Lambda and AWS S3</h3>
+    <button id="lambda-button" type="submit"></button>
+  </div>
+
   <div id="main-zone">
     <section id="upload-video-zone" class="chunk-zone">
       <h2>Upload a video</h2>
+
       <div id="video-container">
         <input id="video-input" type="file" accept="video/*">
         <label for="video-input" id="custom-file-button">Choose Video</label>
       </div>
-      <video id="video-preview" width="400" controls="controls" preload="metadata">
-      </video>
+
+      <video id="video-preview" width="400" controls="controls" preload="metadata"></video>
     </section>
 
     <section id="response-zone" class="chunk-zone">
       <h2>Results</h2>
-      <form action="#">
-        <input id="search-input" type="text" placeholder="Type keywords of the entities you want to find...">
-        <button id="search-button" type="submit">Search</button>
-      </form>
+
       <div id="frame-list">
-        <ul id="image-selector">
-          
-        </ul>
+        <ul id="image-selector"></ul>
       </div>
     </section>
   </div> 
@@ -36,5 +53,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="../js/upload_handler.js"></script>
   <script src="../js/preprocess_display.js"></script>
+  <script src="../js/button_styles.js"></script>
 </body>
 </html>

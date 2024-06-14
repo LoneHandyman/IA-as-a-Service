@@ -1,0 +1,36 @@
+#video-container {
+    margin-bottom: 10px;
+}
+
+#video-input {
+    display: none;
+}
+
+#custom-file-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #c2c2c2;
+    color: #493f3f;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(198, 232, 255, 0.486);
+    font-size: 24px;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+#custom-file-button:hover {
+    background-color: #6e6254;
+}
+
+#video-preview {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 400px;
+    background-color: #00000085;
+    align-self: center;
+}

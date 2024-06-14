@@ -1,0 +1,208 @@
+body { 
+    background: rgb(39, 39, 39); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+#main-zone {
+    width: 100%;
+    height: 750px;
+}
+
+#upload-video-zone{
+    margin-left: 2%;
+    margin-right: 3%;
+
+}
+
+#response-zone{
+    margin-left: 3%;
+    margin-right: 2%;
+
+}
+
+.chunk-zone {
+    width: 45%;
+    height: 600px;
+    float:left;
+    border: none;
+    border-radius: 8px;
+    background-color: #29353b;
+    box-shadow: 0 0 10px rgba(164, 218, 253, 0.486);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: baseline;
+    justify-content:flex-start;
+}
+
+h1 { 
+    margin-left: 4%;
+    margin-bottom: 10px;
+    font-size: 64px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    background: repeating-linear-gradient(to right, #f39821, 
+              #ecde5f, #912222, #c224a8);
+    background-size: 50%;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+} 
+  
+h2 {
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 18px;
+    margin-left: 5%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    text-align: left;
+    color: #cfcfcf;
+}
+  
+section {
+    margin-bottom: 10px;
+}
+
+#lambda-button {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-image: url('https://images.ctfassets.net/lpjm8d10rkpy/6GIrtBy1QABNIFNcnyKxo1/8e651d482fe0e350280991535b171582/aws.svg'); /* Asegúrate de usar la ruta correcta */
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s;
+    filter: drop-shadow(0px 0px 10px rgba(221, 242, 255, 0.486));
+}
+
+#lambda-button:hover {
+    filter: brightness(1.3) drop-shadow(0px 0px 15px rgba(221, 242, 255, 0.486));
+}
+
+#lambda-button:hover:active {
+    filter: brightness(0.6) drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.719));
+}
+
+.bubbles{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index:-1;
+    overflow:hidden;
+    top:0;
+    left:0;
+}
+.bubble{
+    position: absolute;
+    bottom:-100px;
+    width:100px;
+    height: 100px;
+    background:#f1f1f1;
+    border-radius:50%;
+    filter: blur(20px);
+    opacity:0.5;
+    animation: rise 10s infinite ease-in;
+}
+.bubble:nth-child(1){
+    width:40px;
+    height:40px;
+    left:10%;
+    animation-duration:8s;
+    background-color: #f34121;
+}
+.bubble:nth-child(2){
+    width:20px;
+    height:20px;
+    left:20%;
+    animation-duration:5s;
+    animation-delay:1s;
+    background-color: #f39821;
+}
+.bubble:nth-child(3){
+    width:50px;
+    height:50px;
+    left:35%;
+    animation-duration:7s;
+    animation-delay:2s;
+    background-color: #f3e1de;
+}
+.bubble:nth-child(4){
+    width:80px;
+    height:80px;
+    left:50%;
+    animation-duration:11s;
+    animation-delay:0s;
+    background-color: #bbf321;
+}
+.bubble:nth-child(5){
+    width:35px;
+    height:35px;
+    left:55%;
+    animation-duration:6s;
+    animation-delay:1s;
+    background-color: #d021f3;
+}
+.bubble:nth-child(6){
+    width:45px;
+    height:45px;
+    left:65%;
+    animation-duration:8s;
+    animation-delay:3s;
+    background-color: #7c7472;
+}
+.bubble:nth-child(7){
+    width:90px;
+    height:90px;
+    left:70%;
+    animation-duration:12s;
+    animation-delay:2s;
+    background-color: #f59786;
+}
+.bubble:nth-child(8){
+    width:25px;
+    height:25px;
+    left:80%;
+    animation-duration:6s;
+    animation-delay:2s;
+    background-color: #f3bb21;
+}
+.bubble:nth-child(9){
+    width:15px;
+    height:15px;
+    left:70%;
+    animation-duration:5s;
+    animation-delay:1s;
+    background-color: #ab79ec;
+}
+.bubble:nth-child(10){
+    width:90px;
+    height:90px;
+    left:25%;
+    animation-duration:10s;
+    animation-delay:4s;
+    background-color: #ffffff;
+}
+  @keyframes rise{
+    0%{
+      bottom:-100px;
+      transform:translateX(0);
+  }
+    50%{
+      transform:translate(100px);
+  }
+    100%{
+      bottom:1080px;
+      transform:translateX(-200px);
+  }
+}
