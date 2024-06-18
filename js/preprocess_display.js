@@ -87,7 +87,7 @@ async function getObjectsFromBucket() {
 
     img.onload = function() {
       const imgM = drawBoxes(img, element.objects);
-      const lItem = document.createElement('li');
+      const lItem = document.createElement('div');
       lItem.appendChild(imgM);
 
       lItem.onclick = function(){
